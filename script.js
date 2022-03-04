@@ -227,6 +227,8 @@ survey
     } else if (totalScore >= 10 && totalScore <= 15) {
       console.log('15');
       els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Plan C</p>';
+    }else {
+      els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Plan D</p>';
     }
   });
 
