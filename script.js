@@ -191,11 +191,21 @@ var json = {
 };
 
 window.survey = new Survey.Model(json);
+var totalScore = 0;
+var companyName = "";
+
+survey
+  .onComplete
+  .add(function company(survey) {
+   
+  });
+
+
 
 survey
   .onComplete
   .add(function score(survey) {
-    var totalScore = 0;
+  
     var data = survey.data;
 
     Object.keys(data).forEach(function (qName) {
@@ -211,8 +221,11 @@ survey
       } else {
         totalScore += +question.score;
       }
-
+  
     });
+
+
+
     var els = document.querySelector('#surveyResult');
     document
       .querySelector('#surveyElement')
@@ -240,7 +253,8 @@ $("#surveyElement").Survey({
 
 
 
-function saveSurveyToPdf(filename, surveyModel, pdfWidth, pdfHeight) {
+
+function saveSurveyToPdf(filename, surveyModel, pdfWidth, pdfHeight, totalScore) {
 
   var options = {
     fontSize: 14,
@@ -252,19 +266,25 @@ function saveSurveyToPdf(filename, surveyModel, pdfWidth, pdfHeight) {
     },
     format: [pdfWidth, pdfHeight]
   };
-  var surveyPDF = new SurveyPDF.SurveyPDF(json, options, survey);
+  var surveyPDF = new SurveyPDF.SurveyPDF(json, options, survey, totalScore);
   surveyPDF.data = surveyModel.data;
   surveyPDF.save(filename);
 
 }
 
+
 document
   .getElementById("saveToPDFbtn")
   .onclick = function () {
+    var companyName=survey.getValue('company');
+    document
+      .querySelector('#company_name')
+      .innerHTML = "Votre compagnie est " + companyName;
+
+   
     var pdfWidth = survey.pdfWidth || 210;
     var pdfHeight = survey.pdfHeight || 297;
-    saveSurveyToPdf("surveyResult.pdf", survey, pdfWidth, pdfHeight);
+    saveSurveyToPdf(companyName +"_" + totalScore +".pdf", survey, pdfWidth, pdfHeight);
 
   };
 
-console.log(window.location.href);
