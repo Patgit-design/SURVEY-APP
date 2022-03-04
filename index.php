@@ -48,9 +48,11 @@
     <div class="container-fluid bg-app ">
         <div class="row">
             <div class="col-sm-8 col-md-8 bg-survey ">
-                <div id="surveyElement"></div>
+            <div id = "company_name"></div>
+               
                     <div id="surveyResult"></div>
-                    <div id = "company_name"></div>
+                    <div id="surveyElement"></div>
+                    
                     <button class="btn btn-pdf" id="saveToPDFbtn">Save to PDF</button>
                     <?php     
 $to_email = 'patgit.design@gmail.com';

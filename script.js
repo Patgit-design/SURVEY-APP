@@ -194,13 +194,6 @@ window.survey = new Survey.Model(json);
 var totalScore = 0;
 var companyName = "";
 
-survey
-  .onComplete
-  .add(function company(survey) {
-   
-  });
-
-
 
 survey
   .onComplete
@@ -229,19 +222,19 @@ survey
     var els = document.querySelector('#surveyResult');
     document
       .querySelector('#surveyElement')
-      .innerHTML = "total score: " + JSON.stringify(totalScore);
+      .innerHTML = "Votre résultat: " + JSON.stringify(totalScore);
 
     if (totalScore <= 5) {
       console.log('5');
-      els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Pack bienvenue</p>';
+      els.innerHTML = '<h3>Voici le plan parfait:</h3><p>Pack bienvenue</p>';
     } else if (totalScore >= 6 && totalScore <= 9) {
       console.log('9');
-      els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Plan B</p>';
+      els.innerHTML = '<h3>Voici le plan parfait:</h3><p>Plan B</p>';
     } else if (totalScore >= 10 && totalScore <= 15) {
       console.log('15');
-      els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Plan C</p>';
+      els.innerHTML = '<h3>Voici le plan parfait:</h3><p>Plan C</p>';
     }else {
-      els.innerHTML = '<h2>Voici le plan parfait:</h2><p>Plan D</p>';
+      els.innerHTML = '<h3>Voici le plan parfait:</h3><p>Plan D</p>';
     }
   });
 
@@ -279,7 +272,7 @@ document
     var companyName=survey.getValue('company');
     document
       .querySelector('#company_name')
-      .innerHTML = "Votre compagnie est " + companyName;
+      .innerHTML = "Cher " +"<h2>"+ companyName +"</h2> merci d'avoir répondu.";
 
    
     var pdfWidth = survey.pdfWidth || 210;
