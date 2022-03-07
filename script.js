@@ -24,7 +24,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         isRequired: true,
         choices: [{
             value: "one",
@@ -47,7 +47,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup1",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         choices: [{
             value: "one",
             score: 1
@@ -69,7 +69,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup2",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         choices: [{
             value: "one",
             score: 1
@@ -92,7 +92,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup3",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         choices: [{
             value: "one",
             score: 1
@@ -115,7 +115,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup4",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         choices: [{
             value: "one",
             score: 1
@@ -138,7 +138,7 @@ var json = {
         type: "radiogroup",
         name: "myradiogroup5",
         title: "Radio question with the score",
-        colCount: 4,
+        colCount: 1,
         choices: [{
             value: "one",
             score: 1
@@ -185,6 +185,15 @@ var json = {
         validators: [{
           type: "email"
         }]
+      },  {
+        name: "phone",
+        type: "text",
+        inputType: "tel",
+        title: "Your phone number:",
+        placeHolder: "+32 470 86 32 99",
+        isRequired: true,
+        score: 0,
+        autoComplete: "tel"
       }],
     }
   ],
@@ -193,6 +202,8 @@ var json = {
 window.survey = new Survey.Model(json);
 var totalScore = 0;
 var companyName = "";
+var phone = "";
+var name ="";
 
 
 survey
@@ -273,11 +284,11 @@ document
     document
       .querySelector('#company_name')
       .innerHTML = "Cher " +"<h2>"+ companyName +"</h2> merci d'avoir répondu.";
-
-   
+      var phone=survey.getValue('phone');
+      var name=survey.getValue('name');
     var pdfWidth = survey.pdfWidth || 210;
     var pdfHeight = survey.pdfHeight || 297;
-    saveSurveyToPdf(companyName +"_" + totalScore +".pdf", survey, pdfWidth, pdfHeight);
+    saveSurveyToPdf( totalScore +"_"+ companyName +"_" + name + "_"+ phone +".pdf", survey, pdfWidth, pdfHeight);
 
   };
 

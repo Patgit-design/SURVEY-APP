@@ -42,7 +42,7 @@
     <main>
     <div class="container-fluid mb-5">
         <div class="row text-center">
-<h1 class="title-app">Quel Plan ?</h1>
+<h1 class="title-app">QUEL PLAN ?</h1>
         </div>
 </div>
     <div class="container-fluid bg-app ">
@@ -54,13 +54,7 @@
                     <div id="surveyElement"></div>
                     
                     <button class="btn btn-pdf" id="saveToPDFbtn">Save to PDF</button>
-                    <?php     
-$to_email = 'patgit.design@gmail.com';
-$subject = 'Testing PHP Mail';
-$message = 'This mail is sent using the PHP mail function';
-$headers = 'From: patricia.corduant@gmail.com';
-mail($to_email,$subject,$message,$headers);
-?>
+                
             </div>
            
         </div>
