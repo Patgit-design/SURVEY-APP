@@ -49,6 +49,12 @@ main {
 }
 
 .btn {
+    -webkit-border-radius: 50px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 50px;
+    -moz-border-radius-topright: 0;
+    border-radius: 50px;
+    border-top-right-radius: 0;
     font-size: 2rem !important;
     padding-top: 5%!important;
     padding-bottom: 5%!important;
@@ -74,4 +80,8 @@ fieldset{
 
     background-color: transparent !important;
     border: none !important;
+}
+
+input::placeholder{
+    font-size: 20px;
 }
