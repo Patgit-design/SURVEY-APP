@@ -204,6 +204,8 @@ var totalScore = 0;
 var companyName = "";
 var phone = "";
 var name ="";
+var PDF = document.getElementById("HiddenPDF");
+
 
 
 survey
@@ -228,7 +230,8 @@ survey
   
     });
 
-
+  
+   
 
     var els = document.querySelector('#surveyResult');
     document
@@ -248,7 +251,7 @@ survey
       els.innerHTML = '<h3>Voici le plan parfait:</h3><p>Plan D</p>';
     }
   });
-
+  
 
 
 $("#surveyElement").Survey({
