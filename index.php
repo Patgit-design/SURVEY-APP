@@ -45,7 +45,7 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar  bg-light">
   <div class="container-fluid ">
     <a class="navbar-brand" href="#">
       <img src="GIP bleu.png" alt="" width="100" height="auto">
@@ -68,7 +68,7 @@
                     <div id="surveyResult"></div>
                     <div id="surveyElement"></div>
                     
-                    <button class="btn btn-pdf" id="saveToPDFbtn">Save to PDF</button>
+                    <button class="btn btn-pdf col-sm-12 mt-5" id="saveToPDFbtn">Save to PDF</button>
                 
             </div>
            
